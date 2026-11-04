@@ -3,11 +3,10 @@ package edu.towson.cis.cosc442.project4.coffeemaker;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Disabled;
+
 public class CoffeeMakerTest {
-@Disabled("Temporary mutation quality gate")
+
     @Test
     void testAddInventory() {
         // Arrange
@@ -37,7 +36,7 @@ public class CoffeeMakerTest {
         assertFalse(result);
         assertEquals(15, coffeeMaker.checkInventory().getCoffee());
     }
-@Disabled("Temporary mutation quality gate")
+
     @Test
     void testAddInventoryPositiveSugar() {
         // Arrange
@@ -243,7 +242,7 @@ public class CoffeeMakerTest {
         assertNotNull(recipes[0]);
     }
 
-   @Disabled("Temporary mutation quality gate")
+ 
 @Test
 void testMakeCoffee() {
     // Arrange
@@ -300,7 +299,7 @@ void testMakeCoffee() {
         assertEquals(30, change);
         assertEquals(15, coffeeMaker.checkInventory().getCoffee());
     }
-    @Disabled("Temporary mutation quality gate")
+    
 @Test
 void testMakeCoffeeExactPayment() {
     // Arrange

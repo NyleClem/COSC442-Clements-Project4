@@ -3,12 +3,12 @@ package edu.towson.cis.cosc442.project4.coffeemaker;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Disabled;
+
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Disabled;
+
 
 public class InventoryTest {
-@Disabled("Temporary mutation quality gate")
+
     @Test
     void testEnoughIngredients() {
         // Arrange
@@ -25,7 +25,7 @@ public class InventoryTest {
         // Assert
         assertTrue(result);
     }
-@Disabled("Temporary mutation quality gate")
+
     @Test
     void testNotEnoughCoffee() {
         // Arrange
@@ -39,7 +39,7 @@ public class InventoryTest {
         // Assert
         assertFalse(result);
     }
-@Disabled("Temporary mutation quality gate")
+
     @Test
     void testNotEnoughMilk() {
         // Arrange
@@ -53,7 +53,7 @@ public class InventoryTest {
         // Assert
         assertFalse(result);
     }
-@Disabled("Temporary mutation quality gate")
+
     @Test
     void testNotEnoughSugar() {
         // Arrange
@@ -67,7 +67,7 @@ public class InventoryTest {
         // Assert
         assertFalse(result);
     }
-@Disabled("Temporary mutation quality gate")
+
     @Test
     void testNotEnoughChocolate() {
         // Arrange
@@ -181,7 +181,7 @@ public class InventoryTest {
         // Assert
         assertEquals(8, inventory.getSugar());
     }
-@Disabled("Temporary mutation quality gate")
+
     @Test
     void testSetChocolateNegative() {
         // Arrange
@@ -193,7 +193,7 @@ public class InventoryTest {
         // Assert
         assertEquals(0, inventory.getChocolate());
     }
-@Disabled("Temporary mutation quality gate")
+
     @Test
     void testSetCoffeeNegative() {
         // Arrange
@@ -205,7 +205,7 @@ public class InventoryTest {
         // Assert
         assertEquals(0, inventory.getCoffee());
     }
-@Disabled("Temporary mutation quality gate")
+
     @Test
     void testSetMilkNegative() {
         // Arrange
@@ -217,7 +217,7 @@ public class InventoryTest {
         // Assert
         assertEquals(0, inventory.getMilk());
     }
-@Disabled("Temporary mutation quality gate")
+
     @Test
     void testSetSugarNegative() {
         // Arrange
