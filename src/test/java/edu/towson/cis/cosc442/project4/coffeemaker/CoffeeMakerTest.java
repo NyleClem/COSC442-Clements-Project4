@@ -241,22 +241,31 @@ public class CoffeeMakerTest {
         assertNotNull(recipes[0]);
     }
 
-    @Test
-    void testMakeCoffee() {
-        // Arrange
-        CoffeeMaker coffeeMaker = new CoffeeMaker();
-        Recipe recipe = new Recipe();
-        recipe.setName("Black Coffee");
-        recipe.setPrice(25);
-        recipe.setAmtCoffee(2);
+   
+@Test
+void testMakeCoffee() {
+    // Arrange
+    CoffeeMaker coffeeMaker = new CoffeeMaker();
 
-        // Act
-        int change = coffeeMaker.makeCoffee(recipe, 30);
+    Recipe recipe = new Recipe();
+    recipe.setName("Latte");
+    recipe.setPrice(25);
+    recipe.setAmtCoffee(2);
+    recipe.setAmtMilk(3);
+    recipe.setAmtSugar(2);
+    recipe.setAmtChocolate(1);
 
-        // Assert
-        assertEquals(5, change);
-        assertEquals(13, coffeeMaker.checkInventory().getCoffee());
-    }
+    // Act
+    int change = coffeeMaker.makeCoffee(recipe, 30);
+
+    // Assert
+    assertEquals(5, change);
+    assertEquals(13, coffeeMaker.checkInventory().getCoffee());
+    assertEquals(12, coffeeMaker.checkInventory().getMilk());
+    assertEquals(13, coffeeMaker.checkInventory().getSugar());
+    assertEquals(14, coffeeMaker.checkInventory().getChocolate());
+}
+
 
     @Test
     void testMakeCoffeeInsufficientPayment() {
@@ -289,4 +298,23 @@ public class CoffeeMakerTest {
         assertEquals(30, change);
         assertEquals(15, coffeeMaker.checkInventory().getCoffee());
     }
+    
+@Test
+void testMakeCoffeeExactPayment() {
+    // Arrange
+    CoffeeMaker coffeeMaker = new CoffeeMaker();
+
+    Recipe recipe = new Recipe();
+    recipe.setName("Espresso");
+    recipe.setPrice(25);
+    recipe.setAmtCoffee(2);
+
+    // Act
+    int change = coffeeMaker.makeCoffee(recipe, 25);
+
+    // Assert
+    assertEquals(0, change);
+    assertEquals(13, coffeeMaker.checkInventory().getCoffee());
+}
+
 }
